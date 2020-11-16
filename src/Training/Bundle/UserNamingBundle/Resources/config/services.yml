@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+
+  Training\Bundle\UserNamingBundle\Provider\EntityNameProviderDecorator:
+    decorates: oro_locale.entity_name_provider
+    #decorates: Oro\Bundle\LocaleBundle\Provider\EntityNameProvider
+    arguments:
+      - '@Training\Bundle\UserNamingBundle\Provider\EntityNameProviderDecorator.inner'
+    tags:
+      - { name: oro_entity.name_provider, priority: -60 }
+
+  #
+  #Oro\Bundle\LocaleBundle\Provider\EntityNameProvider: '@oro_locale.entity_name_provider'
+
+  Training\Bundle\UserNamingBundle\EventListener\UserViewNamingListener:
+    tags:
+      - { name: kernel.event_listener, event: oro_ui.scroll_data.before.userView, method: onUserView }
