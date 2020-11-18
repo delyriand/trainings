@@ -1,0 +1,7 @@
+acls:
+  training_usernaming_info:
+    type: action
+    label: 'User naming information'
+    description: 'Show user naming information'
+    group_name: ""
+    category: "account_management"

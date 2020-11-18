@@ -9,7 +9,15 @@ use Training\Bundle\UserNamingBundle\Model\ExtendUserNamingType;
 /**
  * @ORM\Entity()
  * @ORM\Table(name="training_user_naming_type")
- * @Config()
+ * @Config(
+ *      defaultValues={
+ *          "security"={
+ *              "type"="ACL",
+ *              "group_name"="",
+ *              "category"="account_management"
+ *          }
+ *      }
+ * )
  */
 class UserNamingType extends ExtendUserNamingType
 {

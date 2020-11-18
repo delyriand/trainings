@@ -6,6 +6,7 @@ datagrids:
             disabled: true
   training-user-naming-grid:
     extended_entity_name: 'Training\Bundle\UserNamingBundle\Entity\UserNamingType'
+    acl_resource: training_usernaming_view
     options:
       entityHint: 'User naming types'
       entity_pagination: true
@@ -63,11 +64,13 @@ datagrids:
       view:
         type: navigate
         label: oro.grid.action.view
+        acl_resource: training_usernaming_view
         link: view_link
         icon: eye
         rowAction: true
 
   trainig-type-users-grid:
+    acl_resource: oro_user_user_view
     source:
       type: orm
       query:

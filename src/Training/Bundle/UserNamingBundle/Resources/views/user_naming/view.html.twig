@@ -38,17 +38,19 @@
             ]
         }
     ] %}
-    {% set dataBlocks = dataBlocks|merge([{
-        'title' : 'oro.user.entity_plural_label'|trans,
-        'subblocks':
-        [
-            {
-                'title' : null,
-                'useSpan': false,
-                'data' : [dataGrid.renderGrid('trainig-type-users-grid', {type_id: entity.id}, { cssClass: 'inner-grid' })]
-            }
-        ]
-    }]) %}
+    {% if is_granted('oro_user_user_view') %}
+        {% set dataBlocks = dataBlocks|merge([{
+            'title' : 'oro.user.entity_plural_label'|trans,
+            'subblocks':
+            [
+                {
+                    'title' : null,
+                    'useSpan': false,
+                    'data' : [dataGrid.renderGrid('trainig-type-users-grid', {type_id: entity.id}, { cssClass: 'inner-grid' })]
+                }
+            ]
+        }]) %}
+    {% endif %}
 
     {% set id = 'userNamingTypeView' %}
     {% set data = { 'dataBlocks': dataBlocks } %}
