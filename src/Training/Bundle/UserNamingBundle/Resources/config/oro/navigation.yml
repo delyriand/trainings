@@ -1,0 +1,17 @@
+navigation:
+  menu_config:
+    items:
+      my_contact_list:
+        label: 'training.my_contact.label'
+        route: 'oro_contact_index'
+        position: 9
+        # extra routes it use for the highlight the menu when edit a contact
+        extras:
+            routes: ['/^oro_contact_(?!group\w+|group\w+)\w+$/']
+            description: 'oro.contact.menu.contact_list.description'
+    tree:
+      application_menu:
+        children:
+          customers_tab:
+            children:
+              my_contact_list: ~

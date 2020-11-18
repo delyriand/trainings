@@ -5,5 +5,6 @@ training.usernaming:
       id.label: 'ID'
       title.label: 'Title'
       format.label: 'Format'
+training.my_contact.label: 'My custom contacts'
 oro.user:
     user_naming.label: 'User Naming Type'
