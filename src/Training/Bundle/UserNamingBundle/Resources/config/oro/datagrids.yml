@@ -1,0 +1,6 @@
+datagrids:
+  contacts-grid:
+    filters:
+        columns:
+          firstName:
+            disabled: true
