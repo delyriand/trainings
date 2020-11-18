@@ -4,3 +4,110 @@ datagrids:
         columns:
           firstName:
             disabled: true
+  training-user-naming-grid:
+    extended_entity_name: 'Training\Bundle\UserNamingBundle\Entity\UserNamingType'
+    options:
+      entityHint: 'User naming types'
+      entity_pagination: true
+      mass_actions:
+        delete:
+          enabled: false
+    source:
+      type: orm
+      query:
+        select:
+          - u.id
+          - u.title
+          - u.format
+        from:
+          - { table: 'Training\Bundle\UserNamingBundle\Entity\UserNamingType', alias: u }
+      hints:
+        - HINT_TRANSLATABLE
+    inline_editing:
+      enable: true
+    columns:
+      title:
+        label: 'Title'
+      format:
+        label: 'Format'
+        type: twig
+        frontend_type: html
+        template: 'TrainingUserNamingBundle:user_naming/datagrid:format.html.twig'
+
+    properties:
+      id: ~
+      view_link:
+        type: url
+        route: training_usernaming_view
+        params:
+          - id
+    sorters:
+      columns:
+        title:
+          data_name: u.title
+        format:
+          data_name: u.format
+      default:
+        title: ASC
+
+    filters:
+      columns:
+        firstName:
+          type: string
+          data_name: u.title
+        lastName:
+          type: string
+          data_name: u.format
+
+    actions:
+      view:
+        type: navigate
+        label: oro.grid.action.view
+        link: view_link
+        icon: eye
+        rowAction: true
+
+  trainig-type-users-grid:
+    source:
+      type: orm
+      query:
+        select:
+          - u.id
+          - u.username
+          - u.email
+          - u.firstName
+          - u.lastName
+        from:
+          - { table: OroUserBundle:User, alias: u }
+        where:
+          and:
+            - IDENTITY(u.userNaming) = :type_id
+      bind_parameters:
+        - name: type_id
+
+    columns:
+      firstName:
+        label: oro.user.first_name.label
+      lastName:
+        label: oro.user.last_name.label
+      email:
+        label: oro.user.email.label
+      username:
+        label: oro.user.username.label
+
+    properties:
+      id: ~
+
+    sorters:
+      columns:
+        username:
+          data_name: u.username
+        email:
+          data_name: u.email
+        firstName:
+          data_name: u.firstName
+        lastName:
+          data_name: u.lastName
+      disable_default_sorting: true
+
+    filters: []

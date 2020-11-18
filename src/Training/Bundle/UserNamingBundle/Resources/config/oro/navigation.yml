@@ -9,9 +9,18 @@ navigation:
         extras:
             routes: ['/^oro_contact_(?!group\w+|group\w+)\w+$/']
             description: 'oro.contact.menu.contact_list.description'
+      training_namimg_type_list:
+        label: 'User Naming Format'
+        route: 'training_usernaming_list'
+        position: 10
     tree:
       application_menu:
         children:
           customers_tab:
             children:
               my_contact_list: ~
+          system_tab:
+              children:
+                users_management:
+                  children:
+                    training_namimg_type_list: ~
