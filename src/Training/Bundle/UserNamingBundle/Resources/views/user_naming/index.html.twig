@@ -2,3 +2,7 @@
 {% import '@OroUI/macros.html.twig' as UI %}
 {% set gridName = 'training-user-naming-grid' %}
 {% set pageTitle = 'Naming Types' %}
+
+{% block navButtons %}
+    {% include '@OroImportExport/ImportExport/buttons_from_configuration.html.twig' with {'alias': 'training_usernaming'} %}
+{% endblock %}
