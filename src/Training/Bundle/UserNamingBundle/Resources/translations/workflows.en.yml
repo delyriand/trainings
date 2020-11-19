@@ -1,0 +1,27 @@
+oro:
+  workflow:
+    usernaming_flow:
+      label: 'User Naming Flow test'
+      step:
+        not_initialized:
+          label: 'Not initialized'
+        name_parts_set:
+          label: 'Name parts set'
+        naming_types_set:
+          label: 'Name types set'
+      transition:
+        set_name_parts:
+          label: 'Set name parts'
+          button_label: 'Set name parts'
+          button_title: 'Set name parts'
+          warning_message: ''
+        set_naming_type:
+          label: 'Set naming type'
+          button_label: 'Set naming type'
+          button_title: 'Set naming type'
+          warning_message: ''
+        reinitalize:
+          label: 'Reinitalize'
+          button_label: 'Reinitalize'
+          button_title: 'Reinitalize'
+          warning_message: ''
