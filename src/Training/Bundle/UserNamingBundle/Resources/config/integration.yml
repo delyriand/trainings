@@ -1,0 +1,10 @@
+services:
+  training.integration.usernaming:
+    class: Training\Bundle\UserNamingBundle\Integration\UserNamingChannel
+    tags:
+      - { name: oro_integration.channel, type: usernaming_channel }
+
+  training.integration.transport.usernaming:
+    class: Training\Bundle\UserNamingBundle\Integration\UserNamingTransport
+    tags:
+      - { name: oro_integration.transport, channel_type: usernaming_channel, type: usernaming_channel }
