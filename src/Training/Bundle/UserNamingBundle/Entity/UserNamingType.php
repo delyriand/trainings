@@ -68,6 +68,20 @@ class UserNamingType extends ExtendUserNamingType
     private $format;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ConfigField(
+     *      defaultValues={
+     *          "importexport"={
+     *              "excluded"=true
+     *          }
+     *      }
+     * )
+     */
+    private $example;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -111,5 +125,21 @@ class UserNamingType extends ExtendUserNamingType
         $this->format = $format;
 
         return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getExample(): ?string
+    {
+        return $this->example;
+    }
+
+    /**
+     * @param string $example
+     */
+    public function setExample(string $example): void
+    {
+        $this->example = $example;
     }
 }

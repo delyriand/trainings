@@ -22,3 +22,16 @@ services:
   Training\Bundle\UserNamingBundle\EventListener\UserViewNamingListener:
     tags:
       - { name: kernel.event_listener, event: oro_ui.scroll_data.before.userView, method: onUserView }
+
+  Training\Bundle\UserNamingBundle\EventListener\UserNamingListener:
+    tags:
+      - name: 'doctrine.orm.entity_listener'
+        event: 'postPersist'
+        entity: \Training\Bundle\UserNamingBundle\Entity\UserNamingType
+      - name: 'doctrine.orm.entity_listener'
+        event: 'preUpdate'
+        entity: \Training\Bundle\UserNamingBundle\Entity\UserNamingType
+
+  Training\Bundle\UserNamingBundle\Async\NamingExampleGeneratorProcessor:
+    tags:
+      - { name: 'oro_message_queue.client.message_processor' }
