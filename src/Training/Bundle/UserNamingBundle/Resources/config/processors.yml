@@ -1,0 +1,11 @@
+services:
+  training.usernaming.api.get.append_example_naming:
+    class: Training\Bundle\UserNamingBundle\Api\Processor\Get\AppendExampleNaming
+    arguments:
+      - '@Training\Bundle\UserNamingBundle\Provider\EntityNameProviderDecorator'
+    tags:
+      - { name: oro.api.processor, action: get, group: finalize, class: Training\Bundle\UserNamingBundle\Entity\UserNamingType, priority: -20 }
+  training.usernaming.api.get_list.append_example_naming:
+    class: Training\Bundle\UserNamingBundle\Api\Processor\GetList\AppendExampleNaming
+    tags:
+      - { name: oro.api.processor, action: get_list, group: finalize, class: Training\Bundle\UserNamingBundle\Entity\UserNamingType, priority: -20 }

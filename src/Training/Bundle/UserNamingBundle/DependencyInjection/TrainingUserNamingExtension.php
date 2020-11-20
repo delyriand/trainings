@@ -17,5 +17,6 @@ class TrainingUserNamingExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('importexport.yml');
+        $loader->load('processors.yml');
     }
 }
