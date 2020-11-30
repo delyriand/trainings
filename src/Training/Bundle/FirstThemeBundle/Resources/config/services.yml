@@ -1,0 +1,6 @@
+services:
+  training_firsttheme.provider.weather_information_provider:
+    class: 'Training\Bundle\FirstThemeBundle\Layout\DataProvider\WeatherInformation'
+    public: true
+    tags:
+        - { name: layout.data_provider, alias: training_firsttheme_weather_information }

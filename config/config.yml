@@ -148,3 +148,6 @@ oro_attachment:
 oro_cms:
     direct_editing:
         login_page_css_field: true
+
+oro_layout:
+    active_theme: first

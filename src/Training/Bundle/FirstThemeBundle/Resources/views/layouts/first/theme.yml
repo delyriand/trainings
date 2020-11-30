@@ -1,0 +1,5 @@
+parent: default
+label: First theme
+description: First theme description.
+logo: '@TrainingFirstThemeBundle/Resources/public/first/images/logo.png'
+groups: [ commerce ]

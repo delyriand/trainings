@@ -1,0 +1,4 @@
+layout:
+  actions:
+    - '@setBlockTheme':
+        themes: 'add_logo.html.twig'
