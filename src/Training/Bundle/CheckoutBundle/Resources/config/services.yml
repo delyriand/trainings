@@ -1,0 +1,6 @@
+services:
+  training_checkout.conditions.training_preg_match:
+    class: 'Training\Bundle\CheckoutBundle\Condition\PregMatch'
+    tags:
+      - { name: oro_action.condition, alias: training_preg_match }
+

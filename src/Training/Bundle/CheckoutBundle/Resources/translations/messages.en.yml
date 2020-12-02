@@ -1,0 +1,4 @@
+training_checkout:
+  workflow:
+    condition.test_user:
+      message: 'You are a test user (email: %email%)'
